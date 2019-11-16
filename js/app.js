@@ -40,7 +40,7 @@ const app = (_ => {
         current++;
         $progressBar.style.width = `${current}%`
       }
-    },2)
+    },20)
   }
 
 // RENDER SUB-FUNCTIONS
@@ -66,16 +66,16 @@ const app = (_ => {
     const index = quiz.index;
     $counter.textContent = `${index+1} of ${quiz.questions.length}`
   }
-  const renderProgressBar = input => {
-    const currentWidth = getPercentage(input, quiz.questions.length)
-    launchBar(0, currentWidth) // tady zkus udelat pomoci getPercentage ze to odectes od zakladu aby to neslo pokazde od 0
+  const renderProgressBar = (start, end) => {
+    const currentWidth = getPercentage(end, quiz.questions.length)
+    launchBar(start, currentWidth)
   }
 // RENNDER END SCREEN
   const renderEndScreen = _ => {
     $question.textContent = "Good job!";
     $tagline.textContent = "Complete!";
     $counter.textContent = `Your score is ${getPercentage(quiz.score, quiz.questions.length)}%`
-    renderProgressBar(quiz.score)
+    renderProgressBar(0, quiz.score)
     $next.style.display = "none"
     $main.textContent = ""
   }
@@ -105,7 +105,7 @@ const app = (_ => {
       renderQuestion()
       renderChoices()
       renderCounter()
-      renderProgressBar(quiz.index)
+      renderProgressBar(getPercentage(quiz.index-1, quiz.questions.length),quiz.index)
     }
   }
   return {
@@ -116,4 +116,3 @@ const app = (_ => {
 
 app.renderAll()
 app.listeners()
-
