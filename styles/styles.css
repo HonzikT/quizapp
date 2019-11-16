@@ -1,0 +1,120 @@
+:root{
+  --white: rgb(255, 255, 255);
+  --dark-grey: #242424;
+  --light-orange: rgba(255, 132, 0, 0.2);
+  --orange: rgb(255, 132, 0);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: var(--dark-grey);
+}
+.container{
+  text-align: center;
+  font-family: sans-serif;
+}
+.header__question{
+  font-size: 2.5rem;
+  padding: 40px 0;
+  background: var(--white);
+  color: var(--dark-grey);
+}
+.header__counter{
+  color: var(--orange);
+  padding: 20px 0;
+}
+.header__progress{
+  width: 400px;
+  background-color: var(--white);
+  border-radius: 4px;
+  margin: 0 auto;
+
+}
+.header__progress-inner{
+  height: 8px;
+  width: 40%;
+  background-color: var(--orange);
+  border-radius: 4px;
+}
+.header__tagline{
+  color: var(--white);
+  padding: 20px;
+  font-size: 1.7rem;
+}
+.main{
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main__answer{
+  display: block;
+  width: 370px;
+  background-color: var(--white);
+  margin: 15px;
+  color: var(--dark-grey);
+  border-radius: 4px;
+}
+.main__label{
+  padding: 2rem 2rem;
+  display: flex;
+  align-items: center;
+}
+.main__label:hover{
+  cursor: pointer;
+}
+ .main__answer input {
+  display: none;
+}
+.main__answer input:checked + label{
+  color: var(--orange);
+}
+.main__answer label i{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--light-orange);
+}
+.main__answer input:checked + label i{
+  background-color: var(--orange);
+}
+.main__answer span{
+  margin-left: 10px;
+}
+.footer{
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.button{
+  width: 120px;
+  height: 50px;
+  margin-top: 20px;
+  color: var(--white);
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+.button:hover{
+  cursor: pointer;
+}
+.reset{
+  background-color: rgba(255, 85, 85, 0.64);
+}
+.reset:hover{
+  background-color: rgba(255, 85, 85, 1);
+}
+.next{
+  background-color: rgba(36, 142, 255, 0.64);
+}
+.next:hover{
+  background-color: rgba(36, 142, 255, 1);
+}
